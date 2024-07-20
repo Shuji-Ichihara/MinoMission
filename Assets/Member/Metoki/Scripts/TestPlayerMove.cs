@@ -5,8 +5,6 @@ using UnityEngine;
 public class TestPlayerMove : MonoBehaviour
 {
 
-    private GameObject followingMino = null; // 現在追従しているminoタグ付きオブジェクト
-
     // 追従させるオブジェクトを格納する変数
     [SerializeField]
     private GameObject followObject;

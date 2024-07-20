@@ -6,6 +6,7 @@ public class FollowPlayer : MonoBehaviour
 {
     private bool isFollowing = false;
     private Transform playerTransform;
+    public Vector3 offset = new Vector3(0, -1, 0);  // プレイヤーの少し下あたりに追従させるためのオフセット
 
     public void ToggleFollow()
     {
@@ -20,8 +21,9 @@ public class FollowPlayer : MonoBehaviour
     {
         if (isFollowing && playerTransform != null)
         {
-            // プレイヤーの位置に追従
-            transform.position = playerTransform.position;
+            transform.position = playerTransform.position + offset;
+            // プレイヤーの回転を追従
+            transform.rotation = Quaternion.Euler(playerTransform.eulerAngles);
         }
     }
 }
