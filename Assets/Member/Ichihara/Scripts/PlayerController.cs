@@ -40,10 +40,10 @@ public class PlayerController : MonoBehaviour
     /// <param name="moveValue"></param>
     public void MovePlayer(Vector2 moveValue)
     {
+        Debug.Log($" up = {_playerObjTransform.up}");
+        Debug.Log($" right = {_playerObjTransform.right}");
         _playerObjTransform.position
             += new Vector3(moveValue.x, moveValue.y, 0f) * _moveForce * Time.deltaTime;
-        Debug.Log(_playerObjTransform.up);
-
     }
 
     /// <summary>
@@ -63,12 +63,13 @@ public class PlayerController : MonoBehaviour
         var minoBlock = _playerCollision.holdMinoObj;
         if (minoBlock == null) return;
         _holdMinoBlock = minoBlock.transform.parent.gameObject;
+        // 子要素にすることで自然な形で追従しているように見える
         _holdMinoBlock.transform.SetParent(_playerObjTransform);
-        // ミノをプレイヤーに追従させる
-        if (Mathf.Abs(_playerObjTransform.up.y) > 1f)
+        // プレイヤーの向きに応じて自然にミノをくっつける
+        if (Mathf.Abs(_playerObjTransform.up.y) >= 1f)
             _holdMinoBlock.transform.localPosition
                 = Vector3.zero + _playerObjTransform.up * _playerObjTransform.localScale.y / 2f;
-        if (Mathf.Abs(_playerObjTransform.right.x) > 1f)
+        else if (Mathf.Abs(_playerObjTransform.right.x) >= 1f)
             _holdMinoBlock.transform.localPosition
                 = Vector3.zero + _playerObjTransform.right * _playerObjTransform.localScale.x / 2f;
         _holdMinoCount++;
@@ -92,5 +93,21 @@ public class PlayerController : MonoBehaviour
     {
         if (_holdMinoBlock == null) return;
         _holdMinoBlock.transform.rotation *= Quaternion.Euler(Vector3.forward * angle);
+    }
+
+    /// <summary>
+    /// ミノを消す処理
+    /// </summary>
+    public void DeleteMinoBlcok()
+    {
+        // ここにミノを消す関数を追記する
+    }
+
+    /// <summary>
+    /// ミノを最初の状態に戻す処理
+    /// </summary>
+    public void Restart()
+    {
+        // ここにミノを初期状態に戻す関数を追記する
     }
 }

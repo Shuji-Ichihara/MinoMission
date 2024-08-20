@@ -11,7 +11,6 @@ public class PlayerCollision : MonoBehaviour
     private void OnCollisionStay2D(Collision2D other)
     {
         var minoObj = other.gameObject;
-        Debug.LogError($"{minoObj.name}");
         if (minoObj.CompareTag("Mino") && _holdMinoObj == null)
         {
             _holdMinoObj = minoObj;
