@@ -32,6 +32,8 @@ public class PlayerInputAction : MonoBehaviour
         _inputMinoMission.Player.PlayerRotateRight.performed += OnPlayerRotationRight;
         _inputMinoMission.Player.MinoRotateLeft.performed += OnMinoBlockRotationLeft;
         _inputMinoMission.Player.MinoRotateRight.performed += OnMinoBlockRotationRight;
+        _inputMinoMission.Player.DeleteMinoBlock.performed += OnDeleteMinoBlock;
+        _inputMinoMission.Player.Restart.performed += OnRestart;
         // InputSystem 有効化
         _inputMinoMission.Enable();
         _inputMinoMission.Player.Enable();
@@ -45,6 +47,7 @@ public class PlayerInputAction : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (_controller == null) return;
         _controller.MovePlayer(_movePlayerBase);
     }
 
@@ -88,7 +91,15 @@ public class PlayerInputAction : MonoBehaviour
         _controller.RotateMinoBlock(_rotatePlayerBase);
     }
 
+    private void OnDeleteMinoBlock(InputAction.CallbackContext context)
+    {
+        _controller.DeleteMinoBlcok();
+    }
 
+    private void OnRestart(InputAction.CallbackContext context)
+    {
+        _controller.Restart();
+    }
     #endregion
 
     #region InputSystem の有効化、無効化
