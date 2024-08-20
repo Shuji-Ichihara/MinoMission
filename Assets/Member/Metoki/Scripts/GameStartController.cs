@@ -8,6 +8,8 @@ public class GameStartController : MonoBehaviour
     public Text initialUI; // 最初に表示するUI
     public Text readyGoText;     // "READY GO"テキストを表示するUI
     public float initialUIDuration = 2.0f; // 最初のUI表示時間
+    [SerializeField]
+    public bool GameStart = false;
 
     void Start()
     {
@@ -46,6 +48,7 @@ public class GameStartController : MonoBehaviour
 
     void StartGame()
     {
+        GameStart = true;
         // ゲーム開始処理をここに記述
         Debug.Log("Game Started!");
     }
