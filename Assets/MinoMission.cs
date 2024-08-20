@@ -109,7 +109,7 @@ public partial class @MinoMission: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""DeleteBlock"",
+                    ""name"": ""DeleteMinoBlock"",
                     ""type"": ""Button"",
                     ""id"": ""e2c8ed41-a6cf-44e1-b1e4-3fc6ea4bd5b9"",
                     ""expectedControlType"": ""Button"",
@@ -412,7 +412,7 @@ public partial class @MinoMission: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""DeleteBlock"",
+                    ""action"": ""DeleteMinoBlock"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -423,7 +423,7 @@ public partial class @MinoMission: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""DeleteBlock"",
+                    ""action"": ""DeleteMinoBlock"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -1108,7 +1108,7 @@ public partial class @MinoMission: IInputActionCollection2, IDisposable
         m_Player_PlayerRotateLeft = m_Player.FindAction("PlayerRotateLeft", throwIfNotFound: true);
         m_Player_PlayerRotateRight = m_Player.FindAction("PlayerRotateRight", throwIfNotFound: true);
         m_Player_Restart = m_Player.FindAction("Restart", throwIfNotFound: true);
-        m_Player_DeleteBlock = m_Player.FindAction("DeleteBlock", throwIfNotFound: true);
+        m_Player_DeleteMinoBlock = m_Player.FindAction("DeleteMinoBlock", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1191,7 +1191,7 @@ public partial class @MinoMission: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_PlayerRotateLeft;
     private readonly InputAction m_Player_PlayerRotateRight;
     private readonly InputAction m_Player_Restart;
-    private readonly InputAction m_Player_DeleteBlock;
+    private readonly InputAction m_Player_DeleteMinoBlock;
     public struct PlayerActions
     {
         private @MinoMission m_Wrapper;
@@ -1205,7 +1205,7 @@ public partial class @MinoMission: IInputActionCollection2, IDisposable
         public InputAction @PlayerRotateLeft => m_Wrapper.m_Player_PlayerRotateLeft;
         public InputAction @PlayerRotateRight => m_Wrapper.m_Player_PlayerRotateRight;
         public InputAction @Restart => m_Wrapper.m_Player_Restart;
-        public InputAction @DeleteBlock => m_Wrapper.m_Player_DeleteBlock;
+        public InputAction @DeleteMinoBlock => m_Wrapper.m_Player_DeleteMinoBlock;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1242,9 +1242,9 @@ public partial class @MinoMission: IInputActionCollection2, IDisposable
             @Restart.started += instance.OnRestart;
             @Restart.performed += instance.OnRestart;
             @Restart.canceled += instance.OnRestart;
-            @DeleteBlock.started += instance.OnDeleteBlock;
-            @DeleteBlock.performed += instance.OnDeleteBlock;
-            @DeleteBlock.canceled += instance.OnDeleteBlock;
+            @DeleteMinoBlock.started += instance.OnDeleteMinoBlock;
+            @DeleteMinoBlock.performed += instance.OnDeleteMinoBlock;
+            @DeleteMinoBlock.canceled += instance.OnDeleteMinoBlock;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -1276,9 +1276,9 @@ public partial class @MinoMission: IInputActionCollection2, IDisposable
             @Restart.started -= instance.OnRestart;
             @Restart.performed -= instance.OnRestart;
             @Restart.canceled -= instance.OnRestart;
-            @DeleteBlock.started -= instance.OnDeleteBlock;
-            @DeleteBlock.performed -= instance.OnDeleteBlock;
-            @DeleteBlock.canceled -= instance.OnDeleteBlock;
+            @DeleteMinoBlock.started -= instance.OnDeleteMinoBlock;
+            @DeleteMinoBlock.performed -= instance.OnDeleteMinoBlock;
+            @DeleteMinoBlock.canceled -= instance.OnDeleteMinoBlock;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1470,7 +1470,7 @@ public partial class @MinoMission: IInputActionCollection2, IDisposable
         void OnPlayerRotateLeft(InputAction.CallbackContext context);
         void OnPlayerRotateRight(InputAction.CallbackContext context);
         void OnRestart(InputAction.CallbackContext context);
-        void OnDeleteBlock(InputAction.CallbackContext context);
+        void OnDeleteMinoBlock(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

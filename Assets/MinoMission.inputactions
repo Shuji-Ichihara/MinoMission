@@ -87,7 +87,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "DeleteBlock",
+                    "name": "DeleteMinoBlock",
                     "type": "Button",
                     "id": "e2c8ed41-a6cf-44e1-b1e4-3fc6ea4bd5b9",
                     "expectedControlType": "Button",
@@ -390,7 +390,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "DeleteBlock",
+                    "action": "DeleteMinoBlock",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -401,7 +401,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "DeleteBlock",
+                    "action": "DeleteMinoBlock",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
