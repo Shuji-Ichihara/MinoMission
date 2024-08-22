@@ -17,7 +17,7 @@ public class ClearCheck : MonoBehaviour
     {
         if (Elimination_completed)
         {
-            Clear = true ;
+            //Clear = true ;
         }
     }
 

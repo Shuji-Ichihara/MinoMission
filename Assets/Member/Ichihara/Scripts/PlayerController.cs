@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Threading;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
 
     public int HoldMinoCount => _holdMinoCount;
     private int _holdMinoCount = 0;
+    private ClearCheck clearCheck;
 
     // Start is called before the first frame update
     void Start()
@@ -101,6 +103,7 @@ public class PlayerController : MonoBehaviour
     public void DeleteMinoBlcok()
     {
         // ここにミノを消す関数を追記する
+        clearCheck.Clear = true;
     }
 
     /// <summary>
@@ -109,5 +112,6 @@ public class PlayerController : MonoBehaviour
     public void Restart()
     {
         // ここにミノを初期状態に戻す関数を追記する
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
