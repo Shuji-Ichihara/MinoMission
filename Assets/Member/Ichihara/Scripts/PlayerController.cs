@@ -75,6 +75,7 @@ public class PlayerController : MonoBehaviour
             _holdMinoBlock.transform.localPosition
                 = Vector3.zero + _playerObjTransform.right * _playerObjTransform.localScale.x / 2f;
         _holdMinoCount++;
+        SoundManager.instance.PlaySE(SoundManager.E_SE.SE02);
     }
 
     /// <summary>
@@ -85,6 +86,7 @@ public class PlayerController : MonoBehaviour
         if (_holdMinoBlock == null) return;
         _holdMinoBlock.transform.SetParent(null);
         _holdMinoBlock = null;
+        SoundManager.instance.PlaySE(SoundManager.E_SE.SE03);
     }
 
     /// <summary>
@@ -95,6 +97,7 @@ public class PlayerController : MonoBehaviour
     {
         if (_holdMinoBlock == null) return;
         _holdMinoBlock.transform.rotation *= Quaternion.Euler(Vector3.forward * angle);
+        SoundManager.instance.PlaySE(SoundManager.E_SE.SE01);
     }
 
     /// <summary>

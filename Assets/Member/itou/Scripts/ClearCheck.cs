@@ -17,7 +17,7 @@ public class ClearCheck : MonoBehaviour
     {
         if (Elimination_completed)
         {
-            //Clear = true ;
+            Clear = true ;
         }
     }
 
@@ -25,11 +25,11 @@ public class ClearCheck : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Mino"))
         {
-            Elimination_completed = false;
+            Elimination_completed = true;
         }
         else
         {
-            Elimination_completed = true;
+            Elimination_completed = false;
         }
     }
 }

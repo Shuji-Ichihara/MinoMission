@@ -47,6 +47,7 @@ public class SceneChange : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.JoystickButton1) && ChangeClick == 0)
             {
                 ChangeClick++;
+                SoundManager.instance.PlaySE(SoundManager.E_SE.SE04);
                 //SceneFadeManagerがアタッチされているオブジェクトを取得
                 ManageObject = GameObject.Find("SceneChangeObject");
                 //オブジェクトの中のSceneFadeManagerを取得

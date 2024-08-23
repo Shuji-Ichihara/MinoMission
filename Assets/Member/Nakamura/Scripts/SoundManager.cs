@@ -235,6 +235,7 @@ public class SoundManager : MonoBehaviour
     {
         SE01,
         SE02,
-        SE03
+        SE03,
+        SE04
     }
 }
