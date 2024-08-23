@@ -44,6 +44,15 @@ public class SceneChange : MonoBehaviour
                 fadeSceneManager = ManageObject.GetComponent<FadeScene>();
                 SceneChanges();
             }
+            else if (Input.GetKeyDown(KeyCode.JoystickButton1) && ChangeClick == 0)
+            {
+                ChangeClick++;
+                //SceneFadeManagerがアタッチされているオブジェクトを取得
+                ManageObject = GameObject.Find("SceneChangeObject");
+                //オブジェクトの中のSceneFadeManagerを取得
+                fadeSceneManager = ManageObject.GetComponent<FadeScene>();
+                SceneChanges();
+            }
         }
         else
         {
