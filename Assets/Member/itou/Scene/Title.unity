@@ -409,6 +409,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3557507353216271785, guid: fad69222ac60bbd498bf13dddc62c579, type: 3}
+      propertyPath: Playermoveoutcount
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557507353216271785, guid: fad69222ac60bbd498bf13dddc62c579, type: 3}
+      propertyPath: SceneName.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557507353216271785, guid: fad69222ac60bbd498bf13dddc62c579, type: 3}
+      propertyPath: SceneName.Array.data[3]
+      value: Gameover
+      objectReference: {fileID: 0}
     - target: {fileID: 7665185126939094712, guid: fad69222ac60bbd498bf13dddc62c579, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

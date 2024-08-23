@@ -9,7 +9,11 @@ public class SceneChange : MonoBehaviour
     [SerializeField] List<string> SceneName = new List<string>();
     GameObject ManageObject;
     FadeScene fadeSceneManager;
+    GameObject _player;
+    PlayerController _playercontroller;
     public bool Goal;
+    [SerializeField]
+    private int Playermoveoutcount;
     int ChangeClick;
     // Start is called before the first frame update
     void Start()
@@ -19,6 +23,11 @@ public class SceneChange : MonoBehaviour
         //オブジェクトの中のSceneFadeManagerを取得
         fadeSceneManager = ManageObject.GetComponent<FadeScene>();
         ChangeClick = 0;
+        if (SceneManager.GetActiveScene().name == SceneName[1])
+        {
+            _player = GameObject.Find("PlayerController");
+            _playercontroller =_player.GetComponent<PlayerController>();
+        }
     }
 
     // Update is called once per frame
@@ -43,6 +52,11 @@ public class SceneChange : MonoBehaviour
                 ChangeClick++;
                 SceneChanges();
             }
+            else if(_playercontroller.HoldMinoCount > Playermoveoutcount)
+            {
+                ChangeClick++;
+                SceneChanges();
+            }
         }
     }
 
@@ -56,6 +70,10 @@ public class SceneChange : MonoBehaviour
                 fadeSceneManager.fadeOutStart(0, 0, 0, 0, SceneName[2]);
                 Goal = false;
             }
+            else if(_playercontroller.HoldMinoCount > Playermoveoutcount)
+            {
+                fadeSceneManager.fadeOutStart(0, 0, 0, 0, SceneName[3]);
+            }
         }
         else if (SceneManager.GetActiveScene().name == SceneName[0])
         {
@@ -63,6 +81,12 @@ public class SceneChange : MonoBehaviour
             fadeSceneManager.fadeOutStart(0, 0, 0, 0, SceneName[1]);
         }
         else if (SceneManager.GetActiveScene().name == SceneName[2])
+        {
+            //SceneFadeManagerの中のフェードアウト開始関数を呼び出し
+            fadeSceneManager.fadeOutStart(0, 0, 0, 0, SceneName[0]);
+            fadeSceneManager.Destorycount += 1;
+        }
+        else if (SceneManager.GetActiveScene().name == SceneName[3])
         {
             //SceneFadeManagerの中のフェードアウト開始関数を呼び出し
             fadeSceneManager.fadeOutStart(0, 0, 0, 0, SceneName[0]);

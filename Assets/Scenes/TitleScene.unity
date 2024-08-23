@@ -2461,8 +2461,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3557507353216271785, guid: fad69222ac60bbd498bf13dddc62c579, type: 3}
+      propertyPath: Goal
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557507353216271785, guid: fad69222ac60bbd498bf13dddc62c579, type: 3}
+      propertyPath: SceneName.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557507353216271785, guid: fad69222ac60bbd498bf13dddc62c579, type: 3}
       propertyPath: SceneName.Array.data[0]
       value: TitleScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557507353216271785, guid: fad69222ac60bbd498bf13dddc62c579, type: 3}
+      propertyPath: SceneName.Array.data[1]
+      value: PlayScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557507353216271785, guid: fad69222ac60bbd498bf13dddc62c579, type: 3}
+      propertyPath: SceneName.Array.data[2]
+      value: ClearScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557507353216271785, guid: fad69222ac60bbd498bf13dddc62c579, type: 3}
+      propertyPath: SceneName.Array.data[3]
+      value: GameoverScene
       objectReference: {fileID: 0}
     - target: {fileID: 7665185126939094712, guid: fad69222ac60bbd498bf13dddc62c579, type: 3}
       propertyPath: m_LocalPosition.x
