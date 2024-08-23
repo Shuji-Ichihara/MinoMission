@@ -47,12 +47,12 @@ public class SceneChange : MonoBehaviour
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.Q) && ChangeClick == 0)
+            if (Goal == true && ChangeClick == 0)
             {
                 ChangeClick++;
                 SceneChanges();
             }
-            else if(_playercontroller.HoldMinoCount > Playermoveoutcount)
+            else if(_playercontroller.HoldMinoCount > Playermoveoutcount && ChangeClick == 0)
             {
                 ChangeClick++;
                 SceneChanges();
