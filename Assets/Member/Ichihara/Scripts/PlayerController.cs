@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
     public int HoldMinoCount => _holdMinoCount;
     private int _holdMinoCount = 0;
-    private ClearCheck clearCheck;
+    public ClearCheck clearCheck;
 
     // Start is called before the first frame update
     void Start()
@@ -68,9 +68,9 @@ public class PlayerController : MonoBehaviour
         // 子要素にすることで自然な形で追従しているように見える
         _holdMinoBlock.transform.SetParent(_playerObjTransform);
         // プレイヤーの向きに応じて自然にミノをくっつける
-        if (Mathf.Abs(_playerObjTransform.up.y) >= 1f)
+        if (Mathf.Abs(_playerObjTransform.up.y) >= -1f)
             _holdMinoBlock.transform.localPosition
-                = Vector3.zero + _playerObjTransform.up * _playerObjTransform.localScale.y / 2f;
+                = Vector3.zero + _playerObjTransform.up * _playerObjTransform.localScale.y / -2f;
         else if (Mathf.Abs(_playerObjTransform.right.x) >= 1f)
             _holdMinoBlock.transform.localPosition
                 = Vector3.zero + _playerObjTransform.right * _playerObjTransform.localScale.x / 2f;

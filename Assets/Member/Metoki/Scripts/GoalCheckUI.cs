@@ -28,6 +28,7 @@ public class GoalCheckUI : MonoBehaviour
         }
         if(goalCheck._MissionClear)
         {
+            readyGoText.gameObject.SetActive(false);
             ClearText.enabled = true;
         }
     }
