@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8534193616687401543}
   - component: {fileID: 1826842897975321970}
   - component: {fileID: -4050661860362860052}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ClearCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,4 +90,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f78735725e239bc4db475f006954d864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTag: Mino
+  requiredBlockCount: 10
   Clear: 0
