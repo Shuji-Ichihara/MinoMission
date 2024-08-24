@@ -3246,9 +3246,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3d77bd5d590f81a43a49f1a5a3c6bd08, type: 3}
   _seClips:
   - {fileID: 8300000, guid: 298554a2b2c299648baebd662c864c02, type: 3}
-  - {fileID: 8300000, guid: 650b3ad7a89df0f4c9af4ae76c1242d7, type: 3}
   - {fileID: 8300000, guid: 9083e2d0834b03249b2c5a55770d165e, type: 3}
   - {fileID: 8300000, guid: 22e185bc757c51047ba362b3582f152e, type: 3}
+  - {fileID: 8300000, guid: 650b3ad7a89df0f4c9af4ae76c1242d7, type: 3}
   _bgmSource: {fileID: 757930460}
   _seSource: {fileID: 596810412}
 --- !u!4 &1657749904
