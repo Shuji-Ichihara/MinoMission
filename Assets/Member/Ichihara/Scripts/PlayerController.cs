@@ -5,9 +5,11 @@ using System.Threading;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    public Text minoCountText;  // Textコンポーネントへの参照
     [SerializeField]
     private GameObject _playerObj = null;
     [SerializeField]
@@ -22,7 +24,7 @@ public class PlayerController : MonoBehaviour
     private Transform _playerObjTransform = null;
 
     public int HoldMinoCount => _holdMinoCount;
-    private int _holdMinoCount = 0;
+    public int _holdMinoCount = 0;
     public ClearCheck clearCheck;
 
     // Start is called before the first frame update
@@ -42,8 +44,8 @@ public class PlayerController : MonoBehaviour
     /// <param name="moveValue"></param>
     public void MovePlayer(Vector2 moveValue)
     {
-        Debug.Log($" up = {_playerObjTransform.up}");
-        Debug.Log($" right = {_playerObjTransform.right}");
+        //Debug.Log($" up = {_playerObjTransform.up}");
+        //Debug.Log($" right = {_playerObjTransform.right}");
         _playerObjTransform.position
             += new Vector3(moveValue.x, moveValue.y, 0f) * _moveForce * Time.deltaTime;
     }
@@ -75,7 +77,9 @@ public class PlayerController : MonoBehaviour
             _holdMinoBlock.transform.localPosition
                 = Vector3.zero + _playerObjTransform.right * _playerObjTransform.localScale.x / 2f;
         _holdMinoCount++;
-        SoundManager.instance.PlaySE(SoundManager.E_SE.SE02);
+        // テキストを更新する
+        UpdateMinoCountText();
+        SoundManager.instance.PlaySE(SoundManager.E_SE.SE04);
     }
 
     /// <summary>
@@ -116,5 +120,9 @@ public class PlayerController : MonoBehaviour
     {
         // ここにミノを初期状態に戻す関数を追記する
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    private void UpdateMinoCountText()
+    {
+        minoCountText.text = _holdMinoCount.ToString();
     }
 }

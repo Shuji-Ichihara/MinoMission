@@ -23,21 +23,23 @@ public class SceneChange : MonoBehaviour
         //オブジェクトの中のSceneFadeManagerを取得
         fadeSceneManager = ManageObject.GetComponent<FadeScene>();
         ChangeClick = 0;
-        if (SceneManager.GetActiveScene().name == SceneName[1])
-        {
-            _player = GameObject.Find("PlayerController");
-            _playercontroller =_player.GetComponent<PlayerController>();
-        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (SceneManager.GetActiveScene().name == SceneName[1])
+        {
+            _player = GameObject.Find("PlayerController");
+            _playercontroller = _player.GetComponent<PlayerController>();
+        }
         if (SceneManager.GetActiveScene().name != SceneName[1])
         {
             if (Input.GetKeyDown(KeyCode.Space) && ChangeClick == 0)
             {
                 ChangeClick++;
+                SoundManager.instance.PlaySE(SoundManager.E_SE.SE04);
                 //SceneFadeManagerがアタッチされているオブジェクトを取得
                 ManageObject = GameObject.Find("SceneChangeObject");
                 //オブジェクトの中のSceneFadeManagerを取得
@@ -62,7 +64,7 @@ public class SceneChange : MonoBehaviour
                 ChangeClick++;
                 SceneChanges();
             }
-            else if(_playercontroller.HoldMinoCount > Playermoveoutcount && ChangeClick == 0)
+            else if(_playercontroller._holdMinoCount > Playermoveoutcount && ChangeClick == 0)
             {
                 ChangeClick++;
                 SceneChanges();
@@ -80,7 +82,7 @@ public class SceneChange : MonoBehaviour
                 fadeSceneManager.fadeOutStart(0, 0, 0, 0, SceneName[2]);
                 Goal = false;
             }
-            else if(_playercontroller.HoldMinoCount > Playermoveoutcount)
+            else if(_playercontroller._holdMinoCount > Playermoveoutcount)
             {
                 fadeSceneManager.fadeOutStart(0, 0, 0, 0, SceneName[3]);
             }
