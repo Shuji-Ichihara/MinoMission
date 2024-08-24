@@ -2748,7 +2748,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3557507353216271785, guid: fad69222ac60bbd498bf13dddc62c579, type: 3}
       propertyPath: Playermoveoutcount
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3557507353216271785, guid: fad69222ac60bbd498bf13dddc62c579, type: 3}
       propertyPath: SceneName.Array.size

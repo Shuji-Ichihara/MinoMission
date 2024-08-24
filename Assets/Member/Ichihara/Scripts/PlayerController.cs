@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     private Transform _playerObjTransform = null;
 
     public int HoldMinoCount => _holdMinoCount;
-    private int _holdMinoCount = 0;
+    public int _holdMinoCount = 30;
     private ClearCheck clearCheck;
 
     // Start is called before the first frame update
@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
             _holdMinoBlock.transform.localPosition
                 = Vector3.zero + _playerObjTransform.right * _playerObjTransform.localScale.x;
         }
-        _holdMinoCount++;
+        _holdMinoCount--;
         SoundManager.instance.PlaySE(SoundManager.E_SE.SE02);
     }
 

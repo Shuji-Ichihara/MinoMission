@@ -64,7 +64,7 @@ public class SceneChange : MonoBehaviour
                 ChangeClick++;
                 SceneChanges();
             }
-            else if(_playercontroller._holdMinoCount > Playermoveoutcount && ChangeClick == 0)
+            else if(_playercontroller._holdMinoCount <= Playermoveoutcount && ChangeClick == 0)
             {
                 ChangeClick++;
                 SceneChanges();
