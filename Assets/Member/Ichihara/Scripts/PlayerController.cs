@@ -63,7 +63,6 @@ public class PlayerController : MonoBehaviour
         var minoBlock = _playerCollision.holdMinoObj;
         if (minoBlock == null) return;
         _holdMinoBlock = minoBlock.transform.parent.gameObject;
-        //_holdMinoBlock = minoBlock.transform.gameObject;
         // 子要素にすることで自然な形で追従しているように見える
         _holdMinoBlock.transform.SetParent(_playerObjTransform);
         // プレイヤーの向きに応じて自然にミノをくっつける

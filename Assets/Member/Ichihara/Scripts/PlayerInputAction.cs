@@ -52,11 +52,19 @@ public class PlayerInputAction : MonoBehaviour
     }
 
     #region InputSystem のコールバック関数群
+    /// <summary>
+    /// プレイヤーの移動を呼び出す
+    /// </summary>
+    /// <param name="context"></param>
     private void OnMovePlayer(InputAction.CallbackContext context)
     {
         _movePlayerBase = context.ReadValue<Vector2>();
     }
 
+    /// <summary>
+    /// ミノを掴む関数、ミノを離す関数を呼び出す
+    /// </summary>
+    /// <param name="context"></param>
     private void OnHoldAndReleaseMinoBlock(InputAction.CallbackContext context)
     {
         if (_isHolding == false)
@@ -71,31 +79,55 @@ public class PlayerInputAction : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// プレイヤーを左回転させる
+    /// </summary>
+    /// <param name="context"></param>
     private void OnPlayerRotationLeft(InputAction.CallbackContext context)
     {
         _controller.RotatePlayer(_rotatePlayerBase);
     }
 
+    /// <summary>
+    /// プレイヤーを右回転させる
+    /// </summary>
+    /// <param name="context"></param>
     private void OnPlayerRotationRight(InputAction.CallbackContext context)
     {
         _controller.RotatePlayer(-_rotatePlayerBase);
     }
 
+    /// <summary>
+    /// ミノを左回転させる
+    /// </summary>
+    /// <param name="context"></param>
     private void OnMinoBlockRotationLeft(InputAction.CallbackContext context)
     {
         _controller.RotateMinoBlock(_rotatePlayerBase);
     }
 
+    /// <summary>
+    /// ミノを右回転させる
+    /// </summary>
+    /// <param name="context"></param>
     private void OnMinoBlockRotationRight(InputAction.CallbackContext context)
     {
         _controller.RotateMinoBlock(_rotatePlayerBase);
     }
 
+    /// <summary>
+    /// ミノがすべて埋まっている列を消す
+    /// </summary>
+    /// <param name="context"></param>
     private void OnDeleteMinoBlock(InputAction.CallbackContext context)
     {
         _controller.DeleteMinoBlcok();
     }
 
+    /// <summary>
+    /// リスタートする関数を呼び出す
+    /// </summary>
+    /// <param name="context"></param>
     private void OnRestart(InputAction.CallbackContext context)
     {
         _controller.Restart();
