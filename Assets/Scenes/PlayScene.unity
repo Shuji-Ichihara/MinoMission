@@ -2721,6 +2721,10 @@ PrefabInstance:
       propertyPath: minoCountText
       value: 
       objectReference: {fileID: 2047441738}
+    - target: {fileID: 1462454846721176893, guid: d1a93e5d5065e264398709f8cbe25fa0, type: 3}
+      propertyPath: _holdMinoCount
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 6005002923077205768, guid: d1a93e5d5065e264398709f8cbe25fa0, type: 3}
       propertyPath: m_Name
       value: PlayerController
@@ -2732,6 +2736,14 @@ PrefabInstance:
     - target: {fileID: 6529077463855856289, guid: d1a93e5d5065e264398709f8cbe25fa0, type: 3}
       propertyPath: m_LocalPosition.y
       value: 2.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 8713748306502014231, guid: d1a93e5d5065e264398709f8cbe25fa0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8713748306502014231, guid: d1a93e5d5065e264398709f8cbe25fa0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

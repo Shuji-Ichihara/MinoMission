@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     private Transform _playerObjTransform = null;
 
     public int HoldMinoCount => _holdMinoCount;
-    public int _holdMinoCount = 0;
+    public int _holdMinoCount = 30;
     public ClearCheck clearCheck;
 
     // Start is called before the first frame update
@@ -72,11 +72,11 @@ public class PlayerController : MonoBehaviour
         // プレイヤーの向きに応じて自然にミノをくっつける
         if (Mathf.Abs(_playerObjTransform.up.y) >= -1f)
             _holdMinoBlock.transform.localPosition
-                = Vector3.zero + _playerObjTransform.up * _playerObjTransform.localScale.y / -2f;
+                = Vector3.zero + _playerObjTransform.up * _playerObjTransform.localScale.y / -1f;
         else if (Mathf.Abs(_playerObjTransform.right.x) >= 1f)
             _holdMinoBlock.transform.localPosition
                 = Vector3.zero + _playerObjTransform.right * _playerObjTransform.localScale.x / 2f;
-        _holdMinoCount++;
+        _holdMinoCount--;
         // テキストを更新する
         UpdateMinoCountText();
         SoundManager.instance.PlaySE(SoundManager.E_SE.SE04);
