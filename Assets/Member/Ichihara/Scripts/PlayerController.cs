@@ -42,8 +42,6 @@ public class PlayerController : MonoBehaviour
     /// <param name="moveValue"></param>
     public void MovePlayer(Vector2 moveValue)
     {
-        Debug.Log($" up = {_playerObjTransform.up}");
-        Debug.Log($" right = {_playerObjTransform.right}");
         _playerObjTransform.position
             += new Vector3(moveValue.x, moveValue.y, 0f) * _moveForce * Time.deltaTime;
     }
@@ -65,15 +63,28 @@ public class PlayerController : MonoBehaviour
         var minoBlock = _playerCollision.holdMinoObj;
         if (minoBlock == null) return;
         _holdMinoBlock = minoBlock.transform.parent.gameObject;
+        //_holdMinoBlock = minoBlock.transform.gameObject;
         // 子要素にすることで自然な形で追従しているように見える
         _holdMinoBlock.transform.SetParent(_playerObjTransform);
         // プレイヤーの向きに応じて自然にミノをくっつける
         if (Mathf.Abs(_playerObjTransform.up.y) >= 1f)
-            _holdMinoBlock.transform.localPosition
-                = Vector3.zero + _playerObjTransform.up * _playerObjTransform.localScale.y / 2f;
+        {
+            if(_playerObjTransform.up.y < 0f)
+            {
+                _holdMinoBlock.transform.localPosition
+                    = Vector3.zero - _playerObjTransform.up * _playerObjTransform.localScale.y;
+            }
+            else
+            {
+                _holdMinoBlock.transform.localPosition
+                    = Vector3.zero + _playerObjTransform.up * _playerObjTransform.localScale.y;
+            }
+        }
         else if (Mathf.Abs(_playerObjTransform.right.x) >= 1f)
+        {
             _holdMinoBlock.transform.localPosition
-                = Vector3.zero + _playerObjTransform.right * _playerObjTransform.localScale.x / 2f;
+                = Vector3.zero + _playerObjTransform.right * _playerObjTransform.localScale.x;
+        }
         _holdMinoCount++;
         SoundManager.instance.PlaySE(SoundManager.E_SE.SE02);
     }
