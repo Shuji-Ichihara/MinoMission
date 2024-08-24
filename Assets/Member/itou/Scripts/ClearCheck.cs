@@ -20,10 +20,22 @@ public class ClearCheck : MonoBehaviour
     {
         if (Elimination_completed)
         {
-            //Clear = true ;
+            Clear = true ;
         }
     }
 
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Mino"))
+        {
+            Elimination_completed = false;
+        }
+        else
+        {
+            Elimination_completed = true;
+        }
+    }
+    /*
     // コライダーに何かが入った時に呼ばれる
     private void OnTriggerEnter(Collider other)
     {
@@ -54,18 +66,6 @@ public class ClearCheck : MonoBehaviour
                 Elimination_completed = true;
             }
             blocksInCollider.Clear();
-        }
-    }
-
-    /*private void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Mino"))
-        {
-            Elimination_completed = true;
-        }
-        else
-        {
-            Elimination_completed = false;
         }
     }*/
 }
