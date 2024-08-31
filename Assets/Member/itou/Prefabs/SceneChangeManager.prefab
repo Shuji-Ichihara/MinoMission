@@ -52,5 +52,5 @@ MonoBehaviour:
   - Clear
   - GameoverScene
   Goal: 0
-  Playermoveoutcount: 0
+  Playermoveoutcount: 30
   senis: {fileID: 0}
