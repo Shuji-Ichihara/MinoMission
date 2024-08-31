@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb2c006767a300340b3e712b8e49d26c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playBGM: 0
 --- !u!4 &238663203
 Transform:
   m_ObjectHideFlags: 0
@@ -201,7 +202,7 @@ MonoBehaviour:
   _bgmMute: 0
   _seMute: 0
   _bgmClips:
-  - {fileID: 8300000, guid: 53e109b33bd7267468206796aff9191e, type: 3}
+  - {fileID: 8300000, guid: 6c72190b9914eaf4e8f183f7452674e1, type: 3}
   - {fileID: 8300000, guid: 53e109b33bd7267468206796aff9191e, type: 3}
   _seClips: []
   _bgmSource: {fileID: 854439226}
