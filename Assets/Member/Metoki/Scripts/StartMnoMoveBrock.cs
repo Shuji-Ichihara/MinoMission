@@ -4,23 +4,41 @@ using UnityEngine;
 
 public class StartMnoMoveBrock : MonoBehaviour
 {
-    public float targetY = -5f;  // 停止位置のY座標
-    public float speed = 1f;     // オブジェクトが下に移動する速度
+    [SerializeField]
+    private Vector3 minoBrockPosition; //移動先の位置決定
+
+    [SerializeField]
+    private float delay = 3f;　//n秒後に移動を開始
+
+    [SerializeField]
+    private float durateion = 3f;
+
+    private Vector3 startPosition;
 
     private bool isMoving = true;
 
+    void Start()
+    {
+        startPosition = transform.position;
+        StartCoroutine(MovePosition());
+    }
     void Update()
     {
-        // オブジェクトが移動中で、現在位置が目標位置よりも上の場合
-        if (isMoving && transform.position.y > targetY)
+
+    }
+    IEnumerator MovePosition()
+    {
+        yield return new WaitForSeconds(delay);
+
+        float elapsedTime = 0;
+
+        while(elapsedTime < durateion)
         {
-            // 下方向にゆっくり移動する
-            transform.position += Vector3.down * speed * Time.deltaTime;
+            transform.position = Vector3.Lerp(startPosition,minoBrockPosition,elapsedTime / durateion);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+
         }
-        else if (isMoving)
-        {
-            // 移動を止め、UIテキストを表示する
-            isMoving = false;
-        }
+        transform.position = minoBrockPosition;
     }
 }
