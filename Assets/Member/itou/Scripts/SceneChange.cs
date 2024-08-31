@@ -14,6 +14,8 @@ public class SceneChange : MonoBehaviour
     public bool Goal;
     [SerializeField]
     private int Playermoveoutcount;
+    [SerializeField]
+    GameObject senis;
     int ChangeClick;
     // Start is called before the first frame update
     void Start()
@@ -23,86 +25,105 @@ public class SceneChange : MonoBehaviour
         //オブジェクトの中のSceneFadeManagerを取得
         fadeSceneManager = ManageObject.GetComponent<FadeScene>();
         ChangeClick = 0;
+        if(SceneManager.GetActiveScene().name == SceneName[2] || SceneManager.GetActiveScene().name == SceneName[3])
+        {
+            senis.SetActive(false);
+        }
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == SceneName[1])
+        if (SceneManager.GetActiveScene().name == SceneName[2] && _player == null)
         {
             _player = GameObject.Find("PlayerController");
             _playercontroller = _player.GetComponent<PlayerController>();
         }
-        if (SceneManager.GetActiveScene().name != SceneName[1])
-        {
-            if (Input.GetKeyDown(KeyCode.Space) && ChangeClick == 0)
-            {
-                ChangeClick++;
-                SoundManager.instance.PlaySE(SoundManager.E_SE.SE04);
-                //SceneFadeManagerがアタッチされているオブジェクトを取得
-                ManageObject = GameObject.Find("SceneChangeObject");
-                //オブジェクトの中のSceneFadeManagerを取得
-                fadeSceneManager = ManageObject.GetComponent<FadeScene>();
-                SceneChanges();
-            }
-            else if (Input.GetKeyDown(KeyCode.JoystickButton1) && ChangeClick == 0)
-            {
-                ChangeClick++;
-                SoundManager.instance.PlaySE(SoundManager.E_SE.SE04);
-                //SceneFadeManagerがアタッチされているオブジェクトを取得
-                ManageObject = GameObject.Find("SceneChangeObject");
-                //オブジェクトの中のSceneFadeManagerを取得
-                fadeSceneManager = ManageObject.GetComponent<FadeScene>();
-                SceneChanges();
-            }
-        }
-        else
+        else if (SceneManager.GetActiveScene().name == SceneName[2])
         {
             if (Goal == true && ChangeClick == 0)
             {
                 ChangeClick++;
-                SceneChanges();
+                senis.SetActive(true);
             }
-            else if(_playercontroller._holdMinoCount <= Playermoveoutcount && ChangeClick == 0)
+            else if (_playercontroller._holdMinoCount >= Playermoveoutcount && ChangeClick == 0)
             {
                 ChangeClick++;
-                SceneChanges();
+                Go_to_Gameover();
+            }
+        }
+        else if (SceneManager.GetActiveScene().name == SceneName[3])
+        {
+            if (Goal == true && ChangeClick == 0)
+            {
+                ChangeClick++;
+                senis.SetActive(true);
+            }
+            else if (_playercontroller._holdMinoCount >= Playermoveoutcount && ChangeClick == 0)
+            {
+                ChangeClick++;
+                Go_to_Gameover();
             }
         }
     }
 
-    public void SceneChanges()
+
+    public void Go_to_StageSelect()
     {
-        if (SceneManager.GetActiveScene().name == SceneName[1])
-        {
-            if (Goal == true)
-            {
-                //SceneFadeManagerの中のフェードアウト開始関数を呼び出し
-                fadeSceneManager.fadeOutStart(0, 0, 0, 0, SceneName[2]);
-                Goal = false;
-            }
-            else if(_playercontroller._holdMinoCount > Playermoveoutcount)
-            {
-                fadeSceneManager.fadeOutStart(0, 0, 0, 0, SceneName[3]);
-            }
-        }
-        else if (SceneManager.GetActiveScene().name == SceneName[0])
+        if(ChangeClick == 0)
         {
             //SceneFadeManagerの中のフェードアウト開始関数を呼び出し
             fadeSceneManager.fadeOutStart(0, 0, 0, 0, SceneName[1]);
+            ChangeClick = 1;
         }
-        else if (SceneManager.GetActiveScene().name == SceneName[2])
+    }
+    public void Go_to_Stage1()
+    {
+        if (ChangeClick == 0)
+        {
+            //SceneFadeManagerの中のフェードアウト開始関数を呼び出し
+            fadeSceneManager.fadeOutStart(0, 0, 0, 0, SceneName[2]);
+            ChangeClick = 1;
+        }
+    }
+    public void Go_to_Stage2()
+    {
+        if (ChangeClick == 0)
+        {
+            //SceneFadeManagerの中のフェードアウト開始関数を呼び出し
+            fadeSceneManager.fadeOutStart(0, 0, 0, 0, SceneName[3]);
+            ChangeClick = 1;
+        }
+    }
+
+    public void Go_to_Title()
+    {
+        if (ChangeClick == 0)
         {
             //SceneFadeManagerの中のフェードアウト開始関数を呼び出し
             fadeSceneManager.fadeOutStart(0, 0, 0, 0, SceneName[0]);
-            fadeSceneManager.Destorycount += 1;
+            ChangeClick = 1;
         }
-        else if (SceneManager.GetActiveScene().name == SceneName[3])
+    }
+
+    public void Go_to_Result()
+    {
+        if (ChangeClick == 0)
         {
             //SceneFadeManagerの中のフェードアウト開始関数を呼び出し
-            fadeSceneManager.fadeOutStart(0, 0, 0, 0, SceneName[0]);
-            fadeSceneManager.Destorycount += 1;
+            fadeSceneManager.fadeOutStart(0, 0, 0, 0, SceneName[4]);
+            ChangeClick = 1;
+        }
+    }
+
+    void Go_to_Gameover()
+    {
+        if (ChangeClick == 0)
+        {
+            //SceneFadeManagerの中のフェードアウト開始関数を呼び出し
+            fadeSceneManager.fadeOutStart(0, 0, 0, 0, SceneName[5]);
+            ChangeClick = 1;
         }
     }
 }

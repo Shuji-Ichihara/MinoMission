@@ -46,6 +46,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SceneName:
   - Title
-  - Game
+  - StageSelect
+  - Stage1
+  - Stage2
   - Result
-  Happyend: 0
+  - Gameover
+  Goal: 0
+  Playermoveoutcount: 0
