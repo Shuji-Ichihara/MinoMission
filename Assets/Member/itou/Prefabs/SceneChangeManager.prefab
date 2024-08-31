@@ -45,11 +45,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneName:
-  - Title
-  - StageSelect
-  - Stage1
+  - TitleScene
+  - StageSelectScene
+  - PlayScene
   - Stage2
-  - Result
-  - Gameover
+  - Clear
+  - GameoverScene
   Goal: 0
   Playermoveoutcount: 0
+  senis: {fileID: 0}
