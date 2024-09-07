@@ -22,6 +22,14 @@ public class PlayerController : MonoBehaviour
     public int _holdMinoCount = 30;
     public ClearCheck clearCheck;
 
+    // 目時追記
+    [SerializeField]
+    private GameObject _armOne;
+    [SerializeField]
+    private GameObject _armTwo;
+    [SerializeField]
+    private GameObject _armThree;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -225,5 +233,15 @@ public class PlayerController : MonoBehaviour
     private void UpdateMinoCountText()
     {
         minoCountText.text = _holdMinoCount.ToString();
+        if(_holdMinoCount <= 20)
+        {
+            _armOne.SetActive(false);
+            _armTwo.SetActive(true);
+        }
+        if(_holdMinoCount <= 10)
+        {
+            _armTwo.SetActive(false);
+            _armThree.SetActive(true);
+        }
     }
 }

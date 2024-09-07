@@ -213,7 +213,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &56928131
 Transform:
   m_ObjectHideFlags: 0
@@ -1116,8 +1116,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1137244849}
   - {fileID: 2121513581}
+  - {fileID: 1137244849}
   - {fileID: 1510124617}
   - {fileID: 1388437504}
   - {fileID: 2047441737}
@@ -3344,6 +3344,7 @@ GameObject:
   m_Component:
   - component: {fileID: 864347020}
   - component: {fileID: 864347019}
+  - component: {fileID: 864347021}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -3393,6 +3394,18 @@ Transform:
   - {fileID: 1628810014}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &864347021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864347018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2752b3e68429cbe459c28996aa753d97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &969010985
 GameObject:
   m_ObjectHideFlags: 0
@@ -4549,6 +4562,18 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1462454846721176893, guid: d1a93e5d5065e264398709f8cbe25fa0, type: 3}
+      propertyPath: _armOne
+      value: 
+      objectReference: {fileID: 1866387088}
+    - target: {fileID: 1462454846721176893, guid: d1a93e5d5065e264398709f8cbe25fa0, type: 3}
+      propertyPath: _armTwo
+      value: 
+      objectReference: {fileID: 1224191251}
+    - target: {fileID: 1462454846721176893, guid: d1a93e5d5065e264398709f8cbe25fa0, type: 3}
+      propertyPath: _armThree
+      value: 
+      objectReference: {fileID: 56928130}
+    - target: {fileID: 1462454846721176893, guid: d1a93e5d5065e264398709f8cbe25fa0, type: 3}
       propertyPath: clearCheck
       value: 
       objectReference: {fileID: 1462272155}
@@ -4617,7 +4642,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1224191252
 Transform:
   m_ObjectHideFlags: 0
@@ -6148,7 +6173,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1866387089
 Transform:
   m_ObjectHideFlags: 0
