@@ -70,8 +70,8 @@ public class PlayerController : MonoBehaviour
         //
         _holdMinoCount--;
         // テキストを更新する
-        //UpdateMinoCountText();
-        //SoundManager.instance.PlaySE(SoundManager.E_SE.SE04);
+        UpdateMinoCountText();
+        SoundManager.instance.PlaySE(SoundManager.E_SE.SE04);
     }
 
     /// <summary>
@@ -110,7 +110,11 @@ public class PlayerController : MonoBehaviour
     public void DeleteMinoBlcok()
     {
         // ここにミノを消す関数を追記する
-        clearCheck.Clear = true;
+        if(clearCheck.Elimination_completed)
+        {
+            clearCheck.Clear = true;
+        }
+        
     }
 
     /// <summary>

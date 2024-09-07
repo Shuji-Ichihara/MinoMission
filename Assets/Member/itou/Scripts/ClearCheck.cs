@@ -8,7 +8,7 @@ public class ClearCheck : MonoBehaviour
     public int requiredBlockCount = 10; // 消去するために必要なブロックの数（必要に応じて調整）
     private List<GameObject> blocksInCollider = new List<GameObject>();
     public bool Clear;
-    bool Elimination_completed;
+    public bool Elimination_completed;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +20,7 @@ public class ClearCheck : MonoBehaviour
     {
         if (Elimination_completed)
         {
-            Clear = true ;
+            //Clear = true ;
         }
     }
 
