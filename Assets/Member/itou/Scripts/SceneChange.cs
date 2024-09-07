@@ -10,6 +10,8 @@ public class SceneChange : MonoBehaviour
     public List<string> OnSceneName => SceneName;
     [SerializeField] List<string> SceneName = new List<string>();
     GameObject ManageObject;
+    // 市原追記
+    public FadeScene FadeScene => FadeScene;
     FadeScene fadeSceneManager;
     GameObject _player;
     PlayerController _playercontroller;
@@ -37,6 +39,7 @@ public class SceneChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if (SceneManager.GetActiveScene().name == SceneName[2] && _player == null)
         {
             _player = GameObject.Find("PlayerController");
@@ -68,6 +71,7 @@ public class SceneChange : MonoBehaviour
                 Go_to_Gameover();
             }
         }
+        */
     }
 
 
