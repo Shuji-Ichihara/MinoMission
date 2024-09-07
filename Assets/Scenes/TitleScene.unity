@@ -3834,7 +3834,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetY: 1.5
-  speed: 2
+  speed: 3
   uiText: {fileID: 1138724509}
 --- !u!114 &1995632391
 MonoBehaviour:

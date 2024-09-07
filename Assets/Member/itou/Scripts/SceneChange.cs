@@ -72,6 +72,12 @@ public class SceneChange : MonoBehaviour
             }
         }
         */
+        if (_playercontroller._gameOver)
+        {
+            Debug.Log("作動");
+            ChangeClick++;
+            Go_to_Gameover();
+        }
     }
 
 

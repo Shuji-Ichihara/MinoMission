@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GameObject _armThree;
 
+    public bool _gameOver = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -242,6 +244,11 @@ public class PlayerController : MonoBehaviour
         {
             _armTwo.SetActive(false);
             _armThree.SetActive(true);
+        }
+        if(_holdMinoCount < 1)
+        {
+            _armThree.SetActive(false);
+            _gameOver = true;
         }
     }
 }
