@@ -483,6 +483,17 @@ public partial class @MinoMission: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": """",
+                    ""id"": ""1def1dbf-e341-451a-952f-b16347e02cd3"",
+                    ""path"": ""<Gamepad>/rightStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayerRotateLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
                     ""name"": ""One Modifier"",
                     ""id"": ""9ed0f784-351a-4335-8d8f-6e7372c4e212"",
                     ""path"": ""OneModifier"",
@@ -514,6 +525,17 @@ public partial class @MinoMission: IInputActionCollection2, IDisposable
                     ""action"": ""PlayerRotateRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""32a9d0ed-dc62-4462-a93c-12447ae35aab"",
+                    ""path"": ""<Gamepad>/rightStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayerRotateRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -607,6 +629,33 @@ public partial class @MinoMission: IInputActionCollection2, IDisposable
                     ""type"": ""PassThrough"",
                     ""id"": ""c7ba2723-eb42-45c3-9aee-1700c638f148"",
                     ""expectedControlType"": ""Quaternion"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ToNextScene"",
+                    ""type"": ""Button"",
+                    ""id"": ""b4b11705-af2f-44aa-af57-4786919a2d03"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SelectStageUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""f1d1c5cd-4b31-4df4-839f-61ce2460604d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SelectStageDown"",
+                    ""type"": ""Button"",
+                    ""id"": ""c4d3edf8-73eb-4276-9ec7-b8f3db7387fb"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -1030,6 +1079,50 @@ public partial class @MinoMission: IInputActionCollection2, IDisposable
                     ""action"": ""TrackedDeviceOrientation"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""602e8b60-40a7-4ccb-b22c-bb900ff09456"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToNextScene"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""07d6046e-55e5-4de5-9ee3-733142d4df26"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToNextScene"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""aa7a71ae-8d23-4b7f-b0c4-731027aee4a1"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectStageUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b5a743d8-fed0-42ee-b3b6-a044f3ec9ded"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectStageDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -1121,6 +1214,9 @@ public partial class @MinoMission: IInputActionCollection2, IDisposable
         m_UI_RightClick = m_UI.FindAction("RightClick", throwIfNotFound: true);
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
+        m_UI_ToNextScene = m_UI.FindAction("ToNextScene", throwIfNotFound: true);
+        m_UI_SelectStageUp = m_UI.FindAction("SelectStageUp", throwIfNotFound: true);
+        m_UI_SelectStageDown = m_UI.FindAction("SelectStageDown", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1310,6 +1406,9 @@ public partial class @MinoMission: IInputActionCollection2, IDisposable
     private readonly InputAction m_UI_RightClick;
     private readonly InputAction m_UI_TrackedDevicePosition;
     private readonly InputAction m_UI_TrackedDeviceOrientation;
+    private readonly InputAction m_UI_ToNextScene;
+    private readonly InputAction m_UI_SelectStageUp;
+    private readonly InputAction m_UI_SelectStageDown;
     public struct UIActions
     {
         private @MinoMission m_Wrapper;
@@ -1324,6 +1423,9 @@ public partial class @MinoMission: IInputActionCollection2, IDisposable
         public InputAction @RightClick => m_Wrapper.m_UI_RightClick;
         public InputAction @TrackedDevicePosition => m_Wrapper.m_UI_TrackedDevicePosition;
         public InputAction @TrackedDeviceOrientation => m_Wrapper.m_UI_TrackedDeviceOrientation;
+        public InputAction @ToNextScene => m_Wrapper.m_UI_ToNextScene;
+        public InputAction @SelectStageUp => m_Wrapper.m_UI_SelectStageUp;
+        public InputAction @SelectStageDown => m_Wrapper.m_UI_SelectStageDown;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1363,6 +1465,15 @@ public partial class @MinoMission: IInputActionCollection2, IDisposable
             @TrackedDeviceOrientation.started += instance.OnTrackedDeviceOrientation;
             @TrackedDeviceOrientation.performed += instance.OnTrackedDeviceOrientation;
             @TrackedDeviceOrientation.canceled += instance.OnTrackedDeviceOrientation;
+            @ToNextScene.started += instance.OnToNextScene;
+            @ToNextScene.performed += instance.OnToNextScene;
+            @ToNextScene.canceled += instance.OnToNextScene;
+            @SelectStageUp.started += instance.OnSelectStageUp;
+            @SelectStageUp.performed += instance.OnSelectStageUp;
+            @SelectStageUp.canceled += instance.OnSelectStageUp;
+            @SelectStageDown.started += instance.OnSelectStageDown;
+            @SelectStageDown.performed += instance.OnSelectStageDown;
+            @SelectStageDown.canceled += instance.OnSelectStageDown;
         }
 
         private void UnregisterCallbacks(IUIActions instance)
@@ -1397,6 +1508,15 @@ public partial class @MinoMission: IInputActionCollection2, IDisposable
             @TrackedDeviceOrientation.started -= instance.OnTrackedDeviceOrientation;
             @TrackedDeviceOrientation.performed -= instance.OnTrackedDeviceOrientation;
             @TrackedDeviceOrientation.canceled -= instance.OnTrackedDeviceOrientation;
+            @ToNextScene.started -= instance.OnToNextScene;
+            @ToNextScene.performed -= instance.OnToNextScene;
+            @ToNextScene.canceled -= instance.OnToNextScene;
+            @SelectStageUp.started -= instance.OnSelectStageUp;
+            @SelectStageUp.performed -= instance.OnSelectStageUp;
+            @SelectStageUp.canceled -= instance.OnSelectStageUp;
+            @SelectStageDown.started -= instance.OnSelectStageDown;
+            @SelectStageDown.performed -= instance.OnSelectStageDown;
+            @SelectStageDown.canceled -= instance.OnSelectStageDown;
         }
 
         public void RemoveCallbacks(IUIActions instance)
@@ -1484,5 +1604,8 @@ public partial class @MinoMission: IInputActionCollection2, IDisposable
         void OnRightClick(InputAction.CallbackContext context);
         void OnTrackedDevicePosition(InputAction.CallbackContext context);
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
+        void OnToNextScene(InputAction.CallbackContext context);
+        void OnSelectStageUp(InputAction.CallbackContext context);
+        void OnSelectStageDown(InputAction.CallbackContext context);
     }
 }

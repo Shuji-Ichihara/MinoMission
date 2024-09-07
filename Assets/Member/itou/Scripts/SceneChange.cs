@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 [DisallowMultipleComponent]
 public class SceneChange : MonoBehaviour
 {
+    // å¸‚åŸè¿½è¨˜
+    public List<string> OnSceneName => SceneName;
     [SerializeField] List<string> SceneName = new List<string>();
     GameObject ManageObject;
     FadeScene fadeSceneManager;
@@ -20,9 +22,9 @@ public class SceneChange : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //SceneFadeManager‚ªƒAƒ^ƒbƒ`‚³‚ê‚Ä‚¢‚éƒIƒuƒWƒFƒNƒg‚ğæ“¾
+        //SceneFadeManagerãŒã‚¢ã‚¿ãƒƒãƒã•ã‚Œã¦ã„ã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—
         ManageObject = GameObject.Find("SceneChangeObject");
-        //ƒIƒuƒWƒFƒNƒg‚Ì’†‚ÌSceneFadeManager‚ğæ“¾
+        //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ä¸­ã®SceneFadeManagerã‚’å–å¾—
         fadeSceneManager = ManageObject.GetComponent<FadeScene>();
         ChangeClick = 0;
         if(SceneManager.GetActiveScene().name == SceneName[2] || SceneManager.GetActiveScene().name == SceneName[3])
@@ -73,7 +75,7 @@ public class SceneChange : MonoBehaviour
     {
         if(ChangeClick == 0)
         {
-            //SceneFadeManager‚Ì’†‚ÌƒtƒF[ƒhƒAƒEƒgŠJnŠÖ”‚ğŒÄ‚Ño‚µ
+            //SceneFadeManagerã®ä¸­ã®ãƒ•ã‚§ãƒ¼ãƒ‰ã‚¢ã‚¦ãƒˆé–‹å§‹é–¢æ•°ã‚’å‘¼ã³å‡ºã—
             fadeSceneManager.fadeOutStart(0, 0, 0, 0, SceneName[1]);
             ChangeClick = 1;
         }
@@ -82,7 +84,7 @@ public class SceneChange : MonoBehaviour
     {
         if (ChangeClick == 0)
         {
-            //SceneFadeManager‚Ì’†‚ÌƒtƒF[ƒhƒAƒEƒgŠJnŠÖ”‚ğŒÄ‚Ño‚µ
+            //SceneFadeManagerã®ä¸­ã®ãƒ•ã‚§ãƒ¼ãƒ‰ã‚¢ã‚¦ãƒˆé–‹å§‹é–¢æ•°ã‚’å‘¼ã³å‡ºã—
             fadeSceneManager.fadeOutStart(0, 0, 0, 0, SceneName[2]);
             ChangeClick = 1;
         }
@@ -91,7 +93,7 @@ public class SceneChange : MonoBehaviour
     {
         if (ChangeClick == 0)
         {
-            //SceneFadeManager‚Ì’†‚ÌƒtƒF[ƒhƒAƒEƒgŠJnŠÖ”‚ğŒÄ‚Ño‚µ
+            //SceneFadeManagerã®ä¸­ã®ãƒ•ã‚§ãƒ¼ãƒ‰ã‚¢ã‚¦ãƒˆé–‹å§‹é–¢æ•°ã‚’å‘¼ã³å‡ºã—
             fadeSceneManager.fadeOutStart(0, 0, 0, 0, SceneName[3]);
             ChangeClick = 1;
         }
@@ -101,7 +103,7 @@ public class SceneChange : MonoBehaviour
     {
         if (ChangeClick == 0)
         {
-            //SceneFadeManager‚Ì’†‚ÌƒtƒF[ƒhƒAƒEƒgŠJnŠÖ”‚ğŒÄ‚Ño‚µ
+            //SceneFadeManagerã®ä¸­ã®ãƒ•ã‚§ãƒ¼ãƒ‰ã‚¢ã‚¦ãƒˆé–‹å§‹é–¢æ•°ã‚’å‘¼ã³å‡ºã—
             fadeSceneManager.fadeOutStart(0, 0, 0, 0, SceneName[0]);
             ChangeClick = 1;
         }
@@ -111,7 +113,7 @@ public class SceneChange : MonoBehaviour
     {
         if (ChangeClick == 0)
         {
-            //SceneFadeManager‚Ì’†‚ÌƒtƒF[ƒhƒAƒEƒgŠJnŠÖ”‚ğŒÄ‚Ño‚µ
+            //SceneFadeManagerã®ä¸­ã®ãƒ•ã‚§ãƒ¼ãƒ‰ã‚¢ã‚¦ãƒˆé–‹å§‹é–¢æ•°ã‚’å‘¼ã³å‡ºã—
             fadeSceneManager.fadeOutStart(0, 0, 0, 0, SceneName[4]);
             ChangeClick = 1;
         }
@@ -121,7 +123,7 @@ public class SceneChange : MonoBehaviour
     {
         if (ChangeClick == 0)
         {
-            //SceneFadeManager‚Ì’†‚ÌƒtƒF[ƒhƒAƒEƒgŠJnŠÖ”‚ğŒÄ‚Ño‚µ
+            //SceneFadeManagerã®ä¸­ã®ãƒ•ã‚§ãƒ¼ãƒ‰ã‚¢ã‚¦ãƒˆé–‹å§‹é–¢æ•°ã‚’å‘¼ã³å‡ºã—
             fadeSceneManager.fadeOutStart(0, 0, 0, 0, SceneName[5]);
             ChangeClick = 1;
         }
