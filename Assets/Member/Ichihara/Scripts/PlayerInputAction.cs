@@ -34,15 +34,12 @@ public class PlayerInputAction : MonoBehaviour
         _inputMinoMission.Player.MinoRotateRight.performed += OnMinoBlockRotationRight;
         _inputMinoMission.Player.DeleteMinoBlock.performed += OnDeleteMinoBlock;
         _inputMinoMission.Player.Restart.performed += OnRestart;
-        // InputSystem 有効化
+        // InputSystem有効化
         _inputMinoMission.Enable();
+        // Playerのアクションマップを有効にする
+        if (_inputMinoMission.UI.enabled == true)
+            _inputMinoMission.UI.Disable();
         _inputMinoMission.Player.Enable();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
     }
 
     private void FixedUpdate()
