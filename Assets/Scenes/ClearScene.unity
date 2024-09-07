@@ -1735,7 +1735,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Push\u3007ToTitle"
+  m_Text: "Push\u3007 To Title"
 --- !u!222 &414346550
 CanvasRenderer:
   m_ObjectHideFlags: 0
