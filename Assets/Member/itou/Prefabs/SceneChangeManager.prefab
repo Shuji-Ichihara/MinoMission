@@ -46,11 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SceneName:
   - TitleScene
-  - StageSelectScene
   - PlayScene
-  - Stage2
-  - Clear
-  - GameoverScene
+  - ClearScene
+  - GameOverScene
   Goal: 0
   Playermoveoutcount: 30
   senis: {fileID: 0}
