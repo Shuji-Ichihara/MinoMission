@@ -39,8 +39,10 @@ public class PlayerController : MonoBehaviour
     /// <param name="moveValue">プレイヤーの移動量</param>
     public void MovePlayer(Vector2 moveValue)
     {
+#if UNITY_EDITOR
         Debug.Log($" up = {_playerObjTransform.up}");
         Debug.Log($" right = {_playerObjTransform.right}");
+#endif
         _playerObjTransform.position
             += new Vector3(moveValue.x, moveValue.y, 0f) * _moveForce * Time.deltaTime;
     }
