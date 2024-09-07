@@ -48,9 +48,9 @@ MonoBehaviour:
   - TitleScene
   - StageSelectScene
   - PlayScene
-  - Stage2
-  - Clear
+  - StageTwoScene
+  - ClearScene
   - GameoverScene
   Goal: 0
-  Playermoveoutcount: 30
+  Playermoveoutcount: 0
   senis: {fileID: 0}
